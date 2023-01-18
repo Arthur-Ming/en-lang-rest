@@ -2,6 +2,7 @@ import mongoose from 'mongoose';
 import app from './app.js';
 import config from './common/config.js';
 
+mongoose.set('strictQuery', false);
 mongoose
   .connect(config.mongodb.uri, {
     useNewUrlParser: true,
