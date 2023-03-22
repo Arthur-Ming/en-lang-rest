@@ -6,6 +6,8 @@ import bodyParser from 'koa-bodyparser';
 import errorHandler from './errors/errorHandler.js';
 import cors from '@koa/cors';
 import wordsRouter from './resources/words/word.routes.js';
+import usersRouter from './resources/users/user.routes.js';
+import userWordsRouter from './resources/userWords/userWord.routes.js';
 import * as url from 'url';
 const __filename = url.fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -21,5 +23,7 @@ app.use(errorHandler);
 app.use(bodyParser());
 
 app.use(wordsRouter.routes());
+app.use(usersRouter.routes());
+app.use(userWordsRouter.routes());
 
 export default app;

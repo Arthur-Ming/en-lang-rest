@@ -23,7 +23,7 @@ export const signIn = async (ctx, next) => {
 
     await upsert(user, token);
 
-    ctx.body = { token, name: user.name, id: user._id };
+    ctx.body = { token, name: user.name, id: user._id, email: user.email };
   })(ctx, next);
 };
 
